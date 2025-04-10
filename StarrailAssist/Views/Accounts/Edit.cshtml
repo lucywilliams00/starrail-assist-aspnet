@@ -1,0 +1,41 @@
+﻿@{
+}
+
+@model StarrailAssist.Models.Entities.Account
+
+<h1>Edit Account</h1>
+@if (Model is null)
+{
+    <p>No Account Found</p>
+}
+else
+{
+    <form method="post">
+        <div>
+            <label>Id</label>
+            <input type="text" asp-for="Id" readonly />
+        </div>
+        <div>
+            <label>Name</label>
+            <input type="text" asp-for="Name" />
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="text" asp-for="Email" />
+        </div>
+        <div>
+            <label>Zone</label>
+            <select name="zone" id="zone" asp-for="Zone">
+                <option value="">Select One</option>
+                <option value="Europe">Europe</option>
+                <option value="America">America</option>
+                <option value="TWHKMO">TWHKMO</option>
+                <option value="Asia">Asia</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Save Changes</button>
+            <button type="submit" asp-controller="Accounts" asp-action="Delete">Delete Account</button>
+        </div>
+    </form>
+}

@@ -1,0 +1,34 @@
+﻿@{
+}
+
+@model List<StarrailAssist.Models.Entities.Character>
+
+<h1>Characters</h1>
+<a asp-controller="Characters" asp-action="Add">Add Character</a>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Path</th>
+            <th>Type</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var character in Model)
+        {
+            <tr>
+                <td>@character.Name</td>
+                <td>The @character.Path</td>
+                <td>@character.Type</td>
+                <td>
+                    <a asp-controller="Characters" asp-action="Edit" asp-route-id="@character.Id">Edit</a>
+                </td>
+                <td>
+                    <a asp-controller="Characters" asp-action="View" asp-route-id="@character.Id">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

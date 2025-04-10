@@ -1,0 +1,28 @@
+﻿@{
+}
+
+@model List<StarrailAssist.Models.Entities.LightCone>
+
+<h1>Light Cones</h1>
+<a asp-controller="LightCones" asp-action="Add">Add Light Cone</a>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Path</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var lightCone in Model)
+        {
+            <tr>
+                <td>@lightCone.Name</td>
+                <td>@lightCone.Path</td>
+                <td>
+                    <a asp-controller="LightCones" asp-action="Edit" asp-route-id="@lightCone.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

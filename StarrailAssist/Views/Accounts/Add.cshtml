@@ -1,0 +1,29 @@
+﻿@{
+}
+
+@model StarrailAssist.Models.AddAccountViewModel
+
+<h1>Add Account</h1>
+<form method="post">
+    <div>
+        <label>Name</label>
+        <input type="text" asp-for="Name" />
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="text" asp-for="Email" />
+    </div>
+    <div>
+        <label>Zone</label>
+        <select name="zone" id="zone" asp-for="Zone">
+            <option value="">Select One</option>
+            <option value="Europe">Europe</option>
+            <option value="America">America</option>
+            <option value="TWHKMO">TWHKMO</option>
+            <option value="Asia">Asia</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">Add</button>
+    </div>
+</form>

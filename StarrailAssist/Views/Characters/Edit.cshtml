@@ -1,0 +1,158 @@
+﻿@{
+}
+
+@model StarrailAssist.Models.CharacterLightConesViewModel
+
+<h1>Edit Character</h1>
+@if (Model.Character is null)
+{
+    <p>No Character Found</p>
+}
+else
+{
+    <!--
+        the name attribute is overriding the asp-for
+        not sure how to work around this 
+        it has something to do with using two models
+    -->
+    <form method="post">
+        <div>
+            <label>Id</label>
+            <input type="text" name="id" asp-for="Character.Id" readonly />
+        </div>
+        <div>
+            <label>Name</label>
+            <input type="text" name="name" asp-for="Character.Name" />
+        </div>
+        <div>
+            <label>Path</label>
+            <select name="path" id="path" asp-for="Character.Path">
+                <option value="">Select One</option>
+                <option value="Abundance">The Abundance</option>
+                <option value="Destruction">The Destruction</option>
+                <option value="Erudition">The Erudition</option>
+                <option value="Harmony">The Harmony</option>
+                <option value="Hunt">The Hunt</option>
+                <option value="Nihility">The Nihility</option>
+                <option value="Preservation">The Preservation</option>
+            </select>
+        </div>
+        <div>
+            <label>Type</label>
+            <select name="type" id="type" asp-for="Character.Type">
+                <option value="">Select One</option>
+                <option value="Fire">Fire</option>
+                <option value="Ice">Ice</option>
+                <option value="Imaginary">Imaginary</option>
+                <option value="Lightning">Lightning</option>
+                <option value="Physical">Physical</option>
+                <option value="Quantum">Quantum</option>
+                <option value="Wind">Wind</option>
+            </select>
+        </div>
+        <div>
+            <label>Light Cone One</label>
+            <select name="lcone" id="lcone" asp-for="Character.LCOne">
+                <option value="">Select One</option>
+                @foreach (var lightCone in Model.LightCones) 
+                {
+                    <option value=@lightCone.Name>@lightCone.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label>Light Cone Two</label>
+            <select name="lctwo" id="lctwo" asp-for="Character.LCTwo">
+                <option value="">Select One</option>
+                @foreach (var lightCone in Model.LightCones)
+                {
+                    <option value=@lightCone.Name>@lightCone.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label>Light Cone Three</label>
+            <select name="lcthree" id="lcthree" asp-for="Character.LCThree">
+                <option value="">Select One</option>
+                @foreach (var lightCone in Model.LightCones)
+                {
+                    <option value=@lightCone.Name>@lightCone.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label>Light Cone Four</label>
+            <select name="lcfour" id="lcfour" asp-for="Character.LCFour">
+                <option value="">Select One</option>
+                @foreach (var lightCone in Model.LightCones)
+                {
+                    <option value=@lightCone.Name>@lightCone.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label>Light Cone Five</label>
+            <select name="lcfive" id="lcfive" asp-for="Character.LCFive">
+                <option value="">Select One</option>
+                @foreach (var lightCone in Model.LightCones)
+                {
+                    <option value=@lightCone.Name>@lightCone.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label>Light Cone Six</label>
+            <select name="lcsix" id="lcsix" asp-for="Character.LCSix">
+                <option value="">Select One</option>
+                @foreach (var lightCone in Model.LightCones)
+                {
+                    <option value=@lightCone.Name>@lightCone.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label>Light Cone Seven</label>
+            <select name="lcseven" id="lcseven" asp-for="Character.LCSeven">
+                <option value="">Select One</option>
+                @foreach (var lightCone in Model.LightCones)
+                {
+                    <option value=@lightCone.Name>@lightCone.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label>Light Cone Eight</label>
+            <select name="lceight" id="lceight" asp-for="Character.LCEight">
+                <option value="">Select One</option>
+                @foreach (var lightCone in Model.LightCones) 
+                {
+                    <option value=@lightCone.Name>@lightCone.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label>Light Cone Nine</label>
+            <select name="lcnine" id="lcnine" asp-for="Character.LCNine">
+                <option value="">Select One</option>
+                @foreach (var lightCone in Model.LightCones)
+                {
+                    <option value=@lightCone.Name>@lightCone.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label>Light Cone Ten</label>
+            <select name="lcten" id="lcten" asp-for="Character.LCTen">
+                <option value="">Select One</option>
+                @foreach (var lightCone in Model.LightCones)
+                {
+                    <option value=@lightCone.Name>@lightCone.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <button type="submit">Save Changes</button>
+            <button type="submit" asp-controller="Characters" asp-action="Delete">Delete Character</button>
+        </div>
+    </form>
+}

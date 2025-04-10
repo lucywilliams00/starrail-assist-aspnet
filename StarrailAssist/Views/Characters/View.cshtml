@@ -1,0 +1,75 @@
+﻿@{
+}
+
+@model StarrailAssist.Models.CharacterLightConesViewModel
+
+<h1>View Character</h1>
+@if (Model.Character is null)
+{
+    <p>No Character Found</p>
+}
+else
+{
+    <h2>@Model.Character.Name</h2>
+    <h3>Light Cones</h3>
+    if (Model.LightCones is null) {
+        <p>No Light Cones Found</p>
+    } 
+    else
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Rank</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var lightCone in Model.LightCones)
+                {
+                    <tr>
+                        <td>@lightCone.Name</td>
+                        <td>
+                            @switch (lightCone.Name) 
+                            {
+                                case var lcone when lcone == Model.Character.LCOne:
+                                    <text>1</text>
+                                    break;
+                                case var lctwo when lctwo == Model.Character.LCTwo:
+                                    <text>2</text>
+                                    break;
+                                case var lcthree when lcthree == Model.Character.LCThree:
+                                    <text>3</text>
+                                    break;
+                                case var lcfour when lcfour == Model.Character.LCFour:
+                                    <text>4</text>
+                                    break;
+                                case var lcfive when lcfive == Model.Character.LCFive:
+                                    <text>5</text>
+                                    break;
+                                case var lcsix when lcsix == Model.Character.LCSix:
+                                    <text>6</text>
+                                    break;
+                                case var lcseven when lcseven == Model.Character.LCSeven:
+                                    <text>7</text>
+                                    break;
+                                case var lceight when lceight == Model.Character.LCEight:
+                                    <text>8</text>
+                                    break;
+                                case var lcnine when lcnine == Model.Character.LCNine:
+                                    <text>9</text>
+                                    break;
+                                case var lcten when lcten == Model.Character.LCTen:
+                                    <text>10</text>
+                                    break;
+                                default:
+                                    <text>-</text>
+                                    break;
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}

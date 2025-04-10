@@ -1,0 +1,41 @@
+﻿@{
+}
+
+@model StarrailAssist.Models.AddCharacterViewModel
+
+<h1>Add Character</h1>
+<form method="post">
+    <div>
+        <label>Name</label>
+        <input type="text" asp-for="Name"/>
+    </div>
+    <div>
+        <label>Path</label>
+        <select name="path" id="path" asp-for="Path">
+            <option value="">Select One</option>
+            <option value="Abundance">The Abundance</option>
+            <option value="Destruction">The Destruction</option>
+            <option value="Erudition">The Erudition</option>
+            <option value="Harmony">The Harmony</option>
+            <option value="Hunt">The Hunt</option>
+            <option value="Nihility">The Nihility</option>
+            <option value="Preservation">The Preservation</option>
+        </select>
+    </div>
+    <div>
+        <label>Type</label>
+        <select name="type" id="type" asp-for="Type">
+            <option value="">Select One</option>
+            <option value="Fire">Fire</option>
+            <option value="Ice">Ice</option>
+            <option value="Imaginary">Imaginary</option>
+            <option value="Lightning">Lightning</option>
+            <option value="Physical">Physical</option>
+            <option value="Quantum">Quantum</option>
+            <option value="Wind">Wind</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">Add</button>
+    </div>
+</form>

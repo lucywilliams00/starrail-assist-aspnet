@@ -1,0 +1,31 @@
+﻿@{
+}
+
+@model List<StarrailAssist.Models.Entities.Account>
+
+<h1>Accounts</h1>
+<a asp-controller="Accounts" asp-action="Add">Add Account</a>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Zone</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var account in Model)
+        {
+            <tr>
+                <td>@account.Name</td>
+                <td>@account.Email</td>
+                <td>@account.Zone</td>
+                <td>
+                    <a asp-controller="Accounts" asp-action="Edit" asp-route-id="@account.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

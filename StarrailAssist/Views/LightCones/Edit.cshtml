@@ -1,0 +1,40 @@
+﻿@{
+}
+
+@model StarrailAssist.Models.Entities.LightCone
+
+<h1>Edit Light Cone</h1>
+@if (Model is null)
+{
+    <p>No Light Cone Found</p>
+}
+else
+{
+    <form method="post">
+        <div>
+            <label>Id</label>
+            <input type="text" asp-for="Id" readonly />
+        </div>
+        <div>
+            <label>Name</label>
+            <input type="text" asp-for="Name" />
+        </div>
+        <div>
+            <label>Path</label>
+            <select name="path" id="path" asp-for="Path">
+                <option value="">Select One</option>
+                <option value="Abundance">The Abundance</option>
+                <option value="Destruction">The Destruction</option>
+                <option value="Erudition">The Erudition</option>
+                <option value="Harmony">The Harmony</option>
+                <option value="Hunt">The Hunt</option>
+                <option value="Nihility">The Nihility</option>
+                <option value="Preservation">The Preservation</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Save Changes</button>
+            <button type="submit" asp-controller="LightCones" asp-action="Delete">Delete Light Cone</button>
+        </div>
+    </form>
+}
